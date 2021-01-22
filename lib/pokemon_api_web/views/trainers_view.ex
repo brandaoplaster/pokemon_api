@@ -1,5 +1,5 @@
-defmodule Pokemonapi.TrainersView do
-  use PokemonApi, :view
+defmodule PokemonApiWeb.TrainersView do
+  use PokemonApiWeb, :view
 
   alias PokemonApi.Trainer
 
