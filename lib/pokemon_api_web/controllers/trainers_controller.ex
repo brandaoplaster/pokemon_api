@@ -9,7 +9,7 @@ defmodule PokemonApiWeb.TrainersController do
 
   defp handle_response({:ok , tariner}, conn) do
     conn
-    |> put_status(:ok)
+    |> put_status(:created)
     |> render("create.json", trainer: trainer)
   end
 end
