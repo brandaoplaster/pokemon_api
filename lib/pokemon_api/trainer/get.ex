@@ -8,7 +8,7 @@ defmodule PokemonApi.Trainer.Get do
         {:error, "Invalid ID format!"}
 
         {:ok, uuid} ->
-          delete(uuid)
+          get(uuid)
     end
   end
 
