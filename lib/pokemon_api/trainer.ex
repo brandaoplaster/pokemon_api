@@ -20,7 +20,7 @@ defmodule PokemonApi.Trainer do
   @required_params [:name, :password]
 
   def changeset(params), do: create_changeset(%__MODULE__{}, params)
-  def changeset(params), do: create_changeset(trainer, params)
+  def changeset(trainer, params), do: create_changeset(trainer, params)
 
   defp create_changeset(module_or_trainer, params) do
     module_or_trainer
