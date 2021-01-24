@@ -22,7 +22,7 @@ defmodule PokemonApiWeb.TrainersView do
     }
   end
 
-  def render("update.json", %{trainer: %Trainer{id: id, name: name, inserted_at: inserted_at, updated: updated}}) do
+  def render("update.json", %{trainer: %Trainer{id: id, name: name, inserted_at: inserted_at, updated_at: updated_at}}) do
     %{
       message: "Trainer updated",
       trainer: %{
