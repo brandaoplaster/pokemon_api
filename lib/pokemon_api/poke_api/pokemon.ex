@@ -2,6 +2,7 @@ defmodule PokemonApi.Pokemon do
   @keys [:id, :name, :weight, :types]
   @enforce_keys @keys
 
+  @derive Jason.Encoder
   defstruct @keys
 
   def build(%{"id" => id, "name" => name, "weight" => weight, "types" => types}) do
