@@ -28,6 +28,7 @@ defmodule PokemonApi.Trainer.Pokemon do
     %__MODULE__{}
     |> cast(params, @required)
     |> validate_required(@required)
+    |> assoc_constraint(:trainergit)
     |> validate_length(:nickname, min: 2)
   end
 end
