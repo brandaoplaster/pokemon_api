@@ -8,6 +8,7 @@ defmodule PokemonApiWeb.Router do
   scope "/api", PokemonApiWeb do
     pipe_through :api
     resources "/trainers", TrainersController, only: [:create, :show, :delete, :update]
+    resources "/trainer_pokemon", TrainerPokemonsController, only: [:create, :show, :delete, :update]
     get "/pokemon/:name", PokemonsController, :show
   end
 
