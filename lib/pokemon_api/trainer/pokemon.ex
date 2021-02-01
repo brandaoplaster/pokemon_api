@@ -10,6 +10,7 @@ defmodule PokemonApi.Trainer.Pokemon do
   schema "pokemons" do
     field :name, :string
     field :nickname, :string
+    field :weight, :integer
     field :types, {:array, :string}
 
     belongs_to :trainer, Trainer
@@ -28,7 +29,7 @@ defmodule PokemonApi.Trainer.Pokemon do
     %__MODULE__{}
     |> cast(params, @required)
     |> validate_required(@required)
-    |> assoc_constraint(:trainergit)
+    |> assoc_constraint(:trainer)
     |> validate_length(:nickname, min: 2)
   end
 end
