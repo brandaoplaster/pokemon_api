@@ -8,9 +8,15 @@ defmodule PokemonApiWeb.TrainerPokemonsController do
     |> handle_response(conn, "create.json", :created)
   end
 
+  def get(conn, %{"id" => id}) do
+    id
+    |> PokemonApi.fetch_trainer_pokemon()
+    |> handle_response(conn, "show.json", :ok)
+  end
+
   def delete(conn, %{"id" => id}) do
     id
-    |> ExMon.delete_trainer_pokemon()
+    |> PokemonApi.delete_trainer_pokemon()
     |> handle_delete(conn)
   end
 
