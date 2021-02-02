@@ -1,6 +1,6 @@
 defmodule PokemonApiWeb.TrainerPokemonsController do
   use PokemonApiWeb, :controller
-  action_fallback PokemonApi.FallbackController
+  action_fallback PokemonApiWeb.FallbackController
 
   def create(conn, params) do
     params
