@@ -14,6 +14,12 @@ defmodule PokemonApiWeb.TrainerPokemonsController do
     |> handle_response(conn, "show.json", :ok)
   end
 
+  def update(conn, params) do
+    params
+    |> PokemonApi.update_trainer_pokemon()
+    |> handle_response(conn, "update.json", :ok)
+  end
+
   def delete(conn, %{"id" => id}) do
     id
     |> PokemonApi.delete_trainer_pokemon()
