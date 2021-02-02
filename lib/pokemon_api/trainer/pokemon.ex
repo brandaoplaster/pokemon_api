@@ -2,7 +2,7 @@ defmodule PokemonApi.Trainer.Pokemon do
   use Ecto.Schema
   import Ecto.Changeset
 
-  alias Pokemon.Trainer
+  alias PokemonApi.Trainer
 
   @primary_key {:id, Ecto.UUID, autogenerate: true}
   @foreign_key_type Ecto.UUID
@@ -29,7 +29,6 @@ defmodule PokemonApi.Trainer.Pokemon do
     %__MODULE__{}
     |> cast(params, @required)
     |> validate_required(@required)
-    |> assoc_constraint(:trainer)
     |> validate_length(:nickname, min: 2)
   end
 

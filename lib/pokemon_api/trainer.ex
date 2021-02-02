@@ -2,7 +2,7 @@ defmodule PokemonApi.Trainer do
   use Ecto.Schema
   import Ecto.Changeset
 
-  alias Pokemon.Trainer.Pokemon
+  alias PokemonApi.Trainer.Pokemon
 
   @primary_key {:id, Ecto.UUID, autogenerate: true}
 
