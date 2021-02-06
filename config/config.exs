@@ -30,7 +30,7 @@ config :phoenix, :json_library, Jason
 # of this file so it overrides the configuration defined above.
 import_config "#{Mix.env()}.exs"
 
-config :pokemon_api, PokemonWeb.Auth.Guardian,
+config :pokemon_api, PokemonApiWeb.Auth.Guardian,
        issuer: "pokemon_api",
        secret_key: "M/jC/+Gk6yJGtadGCQrhcbzYu1EpXY5gdjKRzTIqtbgGK9PS/r0wGn4JvTicK3DI"
 

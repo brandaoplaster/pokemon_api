@@ -1,4 +1,4 @@
-defmodule PokemonWeb.Auth.Guardian do
+defmodule PokemonApiWeb.Auth.Guardian do
   use Guardian, otp_app: :pokemon_api
 
   alias PokemonApi.{Repo, Trainer}
