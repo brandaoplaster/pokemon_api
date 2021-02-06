@@ -1,9 +1,19 @@
 defmodule PokemonApiWeb.Controllers.TrainersControllerTest do
   use PokemonApiWeb.ConnCase
-
+  import PokemonApiWeb.Auth.Guardian
   alias PokemonApi.Trainer
 
   describe "show/2" do
+
+    setup %{conn: conn} do
+      params = %{name: "John Doe", password: "123123"}
+      {:ok, trainer} = PokemonApi.create_trainer(params)
+      {:ok, token, _claims} = encode_and_sign(trainer)
+
+      conn = put_req_header(conn, "authorization", "Bearer #{token}")
+      {:ok, conn: conn}
+    end
+
     test "when there is a trainer with the given id, returns the trainer", %{conn: conn} do
       params = %{name: "Lucas", password: "123456789"}
 
