@@ -13,6 +13,14 @@ defmodule PokemonApiWeb.TrainersController do
       |> render("create.json", %{trainer: trainer, token: token})
     end
   end
+
+  def sign_in(conn, params) do
+    with {:ok, token} <- Guardian.encode_and_sign(params) do
+      conn
+      |> put_status(:ok)
+      |> render("sign_in.json", %{token: token})
+    end
+  end
   
   def delete(conn, %{"id" => id}) do
     id
