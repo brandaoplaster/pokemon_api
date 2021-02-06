@@ -1,5 +1,12 @@
 defmodule PokemonApiWeb.FallbackController do
   use PokemonApiWeb, :controller
+
+  def call(conn, {:error, :unauthorized}) do
+    conn
+    |> put_status(:unauthorized)
+    |> put_view(PokemonApiWeb.ErrorView)
+    |> render("401.json", message: "Trainer unauthorized")
+  end
   
   def call(conn, {:error, result}) do
     conn

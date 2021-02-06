@@ -33,3 +33,7 @@ import_config "#{Mix.env()}.exs"
 config :pokemon_api, PokemonWeb.Auth.Guardian,
        issuer: "pokemon_api",
        secret_key: "M/jC/+Gk6yJGtadGCQrhcbzYu1EpXY5gdjKRzTIqtbgGK9PS/r0wGn4JvTicK3DI"
+
+config :pokemon_api, PokemonApiWeb.Auth.Pipiline,
+  module: PokemonApiWeb.Auth.Guardian,
+  error_handler: PokemonApiWeb.Auth.ErrorHandler
